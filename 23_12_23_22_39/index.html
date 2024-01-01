@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  <link rel="shortcut icon" href="../images/favicon.svg">
+  <title>
+    
+    23 12 23 22 39
+    
+  </title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
+  <link href="../css/base.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+  <style>
+    body {
+      margin-bottom: 50px;
+    }
+    
+    .container {
+      max-width: 100ex;
+    }
+
+    .block-head {
+      background-color: rgba(0, 180, 255, 0.2);
+      padding-left: 0.5ex;
+      margin-top: 1ex;
+    }
+
+    .block-body {
+      padding: 0.5ex;
+      margin-bottom: 1ex;
+      border: 0.5px solid rgb(216, 216, 216);
+    }
+
+    pre>code {
+      font-size: 100%;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script> 
+</head>
+
+<body>
+  <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="..">Home</a>
+      <div class="nav navbar-nav">
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+          <i class="fa fa-search"></i> Search
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div role="main">
+
+      <p>Here is an application of a Hamel basis.</p>
+<div class="block-head">Theorem 1</div>
+<div class="block-body"> 
+Let $P(x)\in\mathbb{R}[x]$ be a polynomial of degree $n$. Then there exist 
+periodic functions $g_{1}(x)$, $g_{2}(x)$, $\ldots$, $g_{n+1}(x)$ such that
+$P(x)=g_{1}(x)+g_{2}(x)+\ldots+g_{n+1}(x)$.
+</div>
+
+<p><span class="arithmatex">\(\rhd\)</span> Let <span class="arithmatex">\(A\)</span> be a Hamel basis. Then every <span class="arithmatex">\(x\in \mathbb{R}\)</span> can be represented 
+as the finite linear combination of elements from <span class="arithmatex">\(A\)</span> with rational 
+coefficients <span class="arithmatex">\(x=\sum\limits_{a\in A}c_{a}(x)a\)</span>. For distinct <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\in A\)</span> we 
+have <span class="arithmatex">\(c_{a}(x+b)=c_{a}(x)\)</span>. In other words, <span class="arithmatex">\(c_{a}(x)\)</span> is a periodic function 
+with the period <span class="arithmatex">\(b\in A\setminus\{a\}\)</span>.  </p>
+<p>Using the identity <span class="arithmatex">\(x=\sum\limits_{a\in A}c_{a}(x)a\)</span>, we express <span class="arithmatex">\(P(x)\)</span> as a 
+linear combination of products <span class="arithmatex">\(c_{a}(x)c_{b}(x)\ldots\)</span> where <span class="arithmatex">\(a,b,\ldots\in A\)</span> 
+and each product has at most <span class="arithmatex">\(n\)</span> multipliers. Let <span class="arithmatex">\(a_{0}\)</span>, <span class="arithmatex">\(a_{1}\)</span>, 
+<span class="arithmatex">\(\ldots\)</span>, <span class="arithmatex">\(a_{n}\)</span> be <span class="arithmatex">\(n+1\)</span> distinct elements of <span class="arithmatex">\(A\)</span>. No product <span class="arithmatex">\(c_{a}(x)c_{b}(x)\ldots\)</span> 
+in the expression can involve all of <span class="arithmatex">\(a_{0}\)</span>, <span class="arithmatex">\(a_{1}\)</span>, <span class="arithmatex">\(\ldots\)</span>, <span class="arithmatex">\(a_{n}\)</span>. 
+Therefore, we can group all the terms into <span class="arithmatex">\(n+1\)</span> sums <span class="arithmatex">\(P_{0}(x)\)</span>, <span class="arithmatex">\(P_{1}(x)\)</span>, 
+<span class="arithmatex">\(\ldots\)</span>, <span class="arithmatex">\(P_{n}(x)\)</span> so that no term in <span class="arithmatex">\(P_{i}(x)\)</span> has the multiplier 
+<span class="arithmatex">\(c_{a_{i}}(x)\)</span>. Thus, we have </p>
+<div class="arithmatex">\[
+P(x)=P_{0}(x)+P_{1}(x)+\ldots+P_{n}(x),
+\]</div>
+<p>and each <span class="arithmatex">\(P_{i}(x)\)</span> has period <span class="arithmatex">\(a_{i}\)</span>. <span class="arithmatex">\(\lhd\)</span></p>
+<div class="block-head">Theorem 2</div>
+<div class="block-body"> 
+A polynomial of degree $n$ cannot be expressed as a sum of $n$ periodic functions.
+</div>
+
+<p><span class="arithmatex">\(\rhd\)</span> We argue by contradiction. Suppose that for some <span class="arithmatex">\(n\in\mathbb{N}\)</span>, there is a 
+polynomial <span class="arithmatex">\(P(x)\)</span> of degree <span class="arithmatex">\(n\)</span> that is the sum of <span class="arithmatex">\(n\)</span> periodic functions. Let 
+<span class="arithmatex">\(d\)</span> be a one of the periods. It follows that <span class="arithmatex">\(P(x+d)-P(x)\)</span> is a polynomial of 
+degree <span class="arithmatex">\(n-1\)</span>, and it is the sum of <span class="arithmatex">\(n-1\)</span> periodic functions, since one of the 
+term is canceled. By repeating this, we eventually obtain a polynomial of the 
+first degree that is the sum of one periodic function, which is impossible. 
+<span class="arithmatex">\(\lhd\)</span></p>
+
+      
+      
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script>
+    var base_url = "..",
+    shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+  </script>
+  <script src="../js/base.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../search/main.js"></script>
+
+  <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+  </body>
+
+</html>

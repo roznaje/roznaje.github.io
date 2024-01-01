@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  <link rel="shortcut icon" href="../images/favicon.svg">
+  <title>
+    
+    23 12 07 12 08
+    
+  </title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
+  <link href="../css/base.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+  <style>
+    body {
+      margin-bottom: 50px;
+    }
+    
+    .container {
+      max-width: 100ex;
+    }
+
+    .block-head {
+      background-color: rgba(0, 180, 255, 0.2);
+      padding-left: 0.5ex;
+      margin-top: 1ex;
+    }
+
+    .block-body {
+      padding: 0.5ex;
+      margin-bottom: 1ex;
+      border: 0.5px solid rgb(216, 216, 216);
+    }
+
+    pre>code {
+      font-size: 100%;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script> 
+</head>
+
+<body>
+  <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="..">Home</a>
+      <div class="nav navbar-nav">
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+          <i class="fa fa-search"></i> Search
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div role="main">
+
+      <p>Here is a proof of Minkowski's theorem, which states that every finitely 
+constrained cone is finitely generated. This theorem reverses 
+<a href="../23_12_07_11_50/">Weyl's theorem</a>. Let us start with a useful definition and
+lemma. </p>
+<div class="block-head">Definition</div>
+<div class="block-body">
+The <em>dual cone</em> $C^{*}$ of a cone $C\subset\mathbb{R}^{n}$ is 
+defined as
+
+\[
+C^{*}\stackrel{\mathrm{def}}{=}\{y\in\mathbb{R}^{n}\colon y^{\top}x\leq 0\;
+\text{for all}\; x\in C\}.
+\]
+</div>
+
+<p>It is easy to see that, if <span class="arithmatex">\(C=\{B\lambda\colon \lambda\geq0\}\)</span>, then 
+<span class="arithmatex">\(C^{*}=\{y\colon B^{\top}y\leq 0\}\)</span>. </p>
+<div class="block-head">Lemma</div>
+<div class="block-body">
+If $C$ is a closed cone, then $C^{**}=C$. 
+</div>
+
+<p><span class="arithmatex">\(\rhd\)</span> We obviously have <span class="arithmatex">\(C\subset C^{**}\)</span>. Suppose that there exists 
+<span class="arithmatex">\(z\in C^{**}\setminus C\)</span>. Since <span class="arithmatex">\(C\)</span> is closed it follows that there is a nonzero
+vector <span class="arithmatex">\(a\in\mathbb{R}^{n}\)</span> such that 
+<span class="arithmatex">\(a^{\top}x\leq 0&lt; a^{\top}z\)</span> for all <span class="arithmatex">\(x\in C\)</span>. Therefore, 
+<span class="arithmatex">\(a\in C^{*}\)</span> and <span class="arithmatex">\(z\not\in C^{**}\)</span>. This is a contradiction. <span class="arithmatex">\(\lhd\)</span></p>
+<p>Let <span class="arithmatex">\(C=\{x\colon Ax\leq 0\}=\{A^{\top}\lambda\colon \lambda &gt;0\}^{*}\)</span>. 
+From the above lemma, it follows that 
+<span class="arithmatex">\(C^{*}=\{A^{\top}\lambda\colon\lambda \geq 0\}\)</span>.</p>
+<div class="block-head">Minkowski's theorem</div>
+<div class="block-body">
+A finitely constrained cone is finitely generated.
+</div>
+
+<p><span class="arithmatex">\(\rhd\)</span> Let <span class="arithmatex">\(C=\{x\colon Ax\leq 0\}\)</span>. Then 
+<span class="arithmatex">\(C^{*}=\{A^{\top}\lambda\colon\lambda\geq 0\}\)</span>. From Weyl's theorem it follows 
+that <span class="arithmatex">\(C^{*}=\{y\colon By\leq 0\}\)</span>. Since <span class="arithmatex">\(C\)</span> is a closed cone, 
+it follows that</p>
+<div class="arithmatex">\[
+C=C^{**}=\{B^{\top}\lambda\colon\lambda\geq0\}.\quad \lhd
+\]</div>
+
+      
+      <h4>Backlinks:</h4>
+      <ul>
+        
+        <li><a href="/23_12_07_12_27/">23 12 07 12 27</a></li>
+        
+      </ul>
+      
+      
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script>
+    var base_url = "..",
+    shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+  </script>
+  <script src="../js/base.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../search/main.js"></script>
+
+  <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+  </body>
+
+</html>

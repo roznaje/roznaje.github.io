@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  <link rel="shortcut icon" href="../images/favicon.svg">
+  <title>
+    
+    23 11 29 19 34
+    
+  </title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
+  <link href="../css/base.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+  <style>
+    body {
+      margin-bottom: 50px;
+    }
+    
+    .container {
+      max-width: 100ex;
+    }
+
+    .block-head {
+      background-color: rgba(0, 180, 255, 0.2);
+      padding-left: 0.5ex;
+      margin-top: 1ex;
+    }
+
+    .block-body {
+      padding: 0.5ex;
+      margin-bottom: 1ex;
+      border: 0.5px solid rgb(216, 216, 216);
+    }
+
+    pre>code {
+      font-size: 100%;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script> 
+</head>
+
+<body>
+  <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="..">Home</a>
+      <div class="nav navbar-nav">
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+          <i class="fa fa-search"></i> Search
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div role="main">
+
+      <p>Let us consider a system of linear inequalities </p>
+<div class="arithmatex">\[
+Ax\leq b
+\tag{1}
+\]</div>
+<p>where <span class="arithmatex">\(A=(a_{ij})_{i,j=1}^{n,m}\in\mathbb{R}^{n\times m}\)</span> and 
+<span class="arithmatex">\(b=(b_{i})_{i=1}^{n}\in\mathbb{R}^{n}\)</span>.</p>
+<div class="block-head">Farkas' Lemma</div>
+<div class="block-body">
+System (1) is infeasible if and only if there exists $y\geq 0$ such 
+that $y^{\top}A=0$ and $y^{\top}b< 0$.
+</div>
+
+<p><span class="arithmatex">\(\rhd\)</span> If there is a vector <span class="arithmatex">\(y\geq 0\)</span> such that <span class="arithmatex">\(y^{\top}A=0\)</span> and 
+<span class="arithmatex">\(y^{\top}b&lt; 0\)</span>, then obviously system (1) is infeasible.</p>
+<p>Let us assume that system (1) is infeasible. Using 
+<a href="../23_11_30_18_37/">Fourier-Motzkin Elimination</a> we reduce the system until we 
+have no variables. The new system is</p>
+<div class="arithmatex">\[
+(0, 0,\ldots, 0)^{\top}\leq (b_{1}',b_{2}',\ldots,b_{k}')^{\top}.
+\]</div>
+<p>Since the new system is also infeasible, it follows that <span class="arithmatex">\(b_{i}'&lt;0\)</span> for some 
+<span class="arithmatex">\(i\)</span>. Rewriting and addition steps in the elimination process correspond to row 
+operations on the original matrix <span class="arithmatex">\(A\)</span>. This is done by matrix multiplication:</p>
+<div class="arithmatex">\[
+0=SAx\leq Sb=b'
+\]</div>
+<p>where the matrix <span class="arithmatex">\(S\)</span> has non-negative entries. Let us denote
+<span class="arithmatex">\(y=S^{\top}e_{i}\)</span>. We have <span class="arithmatex">\(y\geq 0\)</span>, <span class="arithmatex">\(y^{\top}A=0\)</span>, and <span class="arithmatex">\(y^{\top}b&lt; 0\)</span>. <span class="arithmatex">\(\lhd\)</span></p>
+<p>There is another formulation of Farkas' lemma.</p>
+<div class="block-head">Farkas' Lemma (Alternative formulation)</div>
+<div class="block-body">
+A system $Ax=b$, $x\geq 0$ is infeasible if and only if there exist $y$ 
+such that $y^{\top}A\geq 0$ and $y^{\top}b< 0$.
+</div>
+
+<p><span class="arithmatex">\(\rhd\)</span> Let's consider an equivalent system</p>
+<div class="arithmatex">\[
+\begin{pmatrix}
+A\\
+-A\\
+-I
+\end{pmatrix}x\leq 
+\begin{pmatrix}
+b\\
+-b\\
+0
+\end{pmatrix}.
+\]</div>
+<p>This system is infeasible if and only if there exists a vector</p>
+<div class="arithmatex">\[
+y=\begin{pmatrix}y_{1}\\y_{2}\\y_{3}\end{pmatrix}\geq 0
+\]</div>
+<p>such that <span class="arithmatex">\((y_{1}-y_{2})^{\top}A=y_{3}^{\top}\geq 0\)</span> and 
+<span class="arithmatex">\((y_{1}-y_{2})^{\top}b&lt;0\)</span>. <span class="arithmatex">\(\lhd\)</span></p>
+
+      
+      <h4>Backlinks:</h4>
+      <ul>
+        
+        <li><a href="/23_11_29_19_54/">23 11 29 19 54</a></li>
+        
+      </ul>
+      
+      
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script>
+    var base_url = "..",
+    shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+  </script>
+  <script src="../js/base.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../search/main.js"></script>
+
+  <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+  </body>
+
+</html>
