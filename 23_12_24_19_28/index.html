@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  <link rel="shortcut icon" href="../images/favicon.svg">
+  <title>
+    
+    23 12 24 19 28
+    
+  </title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
+  <link href="../css/base.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+  <style>
+    body {
+      margin-bottom: 50px;
+    }
+    
+    .container {
+      max-width: 100ex;
+    }
+
+    .block-head {
+      background-color: rgba(0, 180, 255, 0.2);
+      padding-left: 0.5ex;
+      margin-top: 1ex;
+    }
+
+    .block-body {
+      padding: 0.5ex;
+      margin-bottom: 1ex;
+      border: 0.5px solid rgb(216, 216, 216);
+    }
+
+    pre>code {
+      font-size: 100%;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script> 
+</head>
+
+<body>
+  <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="..">Home</a>
+      <div class="nav navbar-nav">
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+          <i class="fa fa-search"></i> Search
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div role="main">
+
+      <p>Let <span class="arithmatex">\(P=\{x\colon Ax\leq b\}\subset\mathbb{R}^{n}\)</span> be a nonempty polyhedron. </p>
+<div class="block-head">Definition 1</div>
+<div class="block-body">
+If $c\in\mathbb{R}^{n}$ is a nonzero vector for which 
+$d=\max\{c^{\top}x\colon x\in P\}$ is finite, then the set 
+$\{x\colon c^{\top}x=d\}$ is called a <em>supporting hyperplane</em> of
+$P$.
+</div>
+
+<div class="block-head">Definition 2</div>
+<div class="block-body">
+A <em>face</em> of $P$ is $P$ itself or the intersection
+of $P$ with a supporting hyperplane of $P$.
+</div>
+
+<div class="block-head">Theorem</div>
+<div class="block-body">
+A subset $F\subset P$ of a polyhedron $P=\{x\colon Ax\leq b\}$ is a face of $P$
+if and only if $F=\{x\in P\colon A_{1}x=b_{1}\}\neq\varnothing$ for some 
+subsystem $A_{1}x\leq b_{1}$ of $Ax\leq b$.
+</div>
+
+<p><span class="arithmatex">\(\rhd\)</span> Let <span class="arithmatex">\(F=\{x\in P\colon A_{1}x=b_{1}\}\)</span> be nonempty. By <span class="arithmatex">\(c\)</span> we denote the 
+sum of the rows of <span class="arithmatex">\(A_{1}\)</span>, and by <span class="arithmatex">\(d\)</span> we denote the sum of the components of 
+<span class="arithmatex">\(b_{1}\)</span>. Then obviously <span class="arithmatex">\(c^{\top}x\leq d\)</span> for all <span class="arithmatex">\(x\in P\)</span> and 
+<span class="arithmatex">\(F=\{x\in P\colon cx=d\}\)</span> is a face of <span class="arithmatex">\(P\)</span>.</p>
+<p>Let <span class="arithmatex">\(F=\{x\in P\colon cx=d\}\)</span> be a face of <span class="arithmatex">\(P\)</span>. Let <span class="arithmatex">\(A_{1}x\leq b_{1}\)</span> be the 
+maximal subsystem of <span class="arithmatex">\(Ax\leq b\)</span> such that <span class="arithmatex">\(A_{1}x=b_{1}\)</span> for all <span class="arithmatex">\(x\in F\)</span>. We 
+will show that <span class="arithmatex">\(F=\{x\in P\colon A_{1}x=b_{1}\}\)</span>. Assume the converse. 
+Let <span class="arithmatex">\(A_{2}x\leq b_{2}\)</span> be the rest of the system <span class="arithmatex">\(Ax\leq b\)</span>. Let us choose an
+arbitrary vector <span class="arithmatex">\(y\in \{x\in P\colon A_{1}x=b_{1}\}\setminus F\)</span>. 
+We have <span class="arithmatex">\(A_{1}y=b_{1}\)</span> and <span class="arithmatex">\(c^{\top}y&lt; c^{\top}x\)</span>. Also we choose a vector 
+<span class="arithmatex">\(x\in F\)</span> such that <span class="arithmatex">\(A_{1}x=b_{1}\)</span> and <span class="arithmatex">\(A_{2}x&lt; b_{2}\)</span>
+Therefore, for a small enough <span class="arithmatex">\(\varepsilon &gt; 0\)</span> and 
+vector <span class="arithmatex">\(z=x+\varepsilon(x-y)\)</span> the inequalities <span class="arithmatex">\(A_{2}z&lt;b_{2}\)</span> hold. Moreover,
+we have <span class="arithmatex">\(A_{1}z=b_{1}\)</span> and <span class="arithmatex">\(c^{\top}z&gt;d\)</span>, which is impossible. <span class="arithmatex">\(\lhd\)</span></p>
+<div class="block-head">Corollary</div>
+<div class="block-body">If $F$ be a face of a polyhedron 
+$P=\{x\colon Ax\leq b\}$, then for some subsystem $A'x\leq b'$ of 
+$Ax\leq b$ the set $\{x\in\mathbb{R}^{n}\colon A'x=b'\}$ is a nonempty 
+subset of $F$.</div>
+
+<p><span class="arithmatex">\(\rhd\)</span> From the previous theorem, it follows that 
+<span class="arithmatex">\(F=\{x\in P\colon A_{1}x=b_{1}\}\)</span> for some subsystem <span class="arithmatex">\(A_{1}x\leq b_{1}\)</span> of 
+<span class="arithmatex">\(Ax\leq b\)</span>. Let us expand the subsystem <span class="arithmatex">\(A_{1}x\leq b_{1}\)</span> to a maximal subsystem 
+<span class="arithmatex">\(A'x\leq b'\)</span> such that the set <span class="arithmatex">\(\{x\in P\colon A'x=b'\}\)</span> is nonempty. Let 
+<span class="arithmatex">\(A''x\leq b''\)</span> be the rest of the system <span class="arithmatex">\(Ax\leq b\)</span>. It is 
+readily verified that the equality <span class="arithmatex">\(A'x=b'\)</span> implies the inequality 
+<span class="arithmatex">\(A''x\leq b''\)</span>. Therefore, <span class="arithmatex">\(\{x\in P\colon A'x=b'\}=\{x\in\mathbb{R}^{n}
+\colon A'x=b'\}\)</span>. <span class="arithmatex">\(\lhd\)</span></p>
+
+      
+      
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script>
+    var base_url = "..",
+    shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+  </script>
+  <script src="../js/base.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../search/main.js"></script>
+
+  <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+  </body>
+
+</html>

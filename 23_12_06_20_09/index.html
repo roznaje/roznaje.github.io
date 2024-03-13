@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  <link rel="shortcut icon" href="../images/favicon.svg">
+  <title>
+    
+    23 12 06 20 09
+    
+  </title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
+  <link href="../css/base.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+  <style>
+    body {
+      margin-bottom: 50px;
+    }
+    
+    .container {
+      max-width: 100ex;
+    }
+
+    .block-head {
+      background-color: rgba(0, 180, 255, 0.2);
+      padding-left: 0.5ex;
+      margin-top: 1ex;
+    }
+
+    .block-body {
+      padding: 0.5ex;
+      margin-bottom: 1ex;
+      border: 0.5px solid rgb(216, 216, 216);
+    }
+
+    pre>code {
+      font-size: 100%;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script> 
+</head>
+
+<body>
+  <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="..">Home</a>
+      <div class="nav navbar-nav">
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+          <i class="fa fa-search"></i> Search
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div role="main">
+
+      <p>Let us apply the Benders decomposition to the following nonlinear problem:</p>
+<div class="arithmatex">\[
+\begin{array}{rl}
+\min&amp; c^{\top}x+f(y)\\
+\mathrm{s.t.}&amp; Ax+g(y)\geq b\\
+&amp; x\geq 0\\
+&amp; y\in\mathbb{Y}
+\end{array}
+\tag{1}
+\]</div>
+<p>We define an auxiliary function <span class="arithmatex">\(h\colon\mathbb{Y}\to\mathbb{R}\)</span> as</p>
+<div class="arithmatex">\[
+\begin{array}{c}
+h(y)=\min\{c^{\top}x\colon Ax\geq b-g(y),x\geq0\}=\\
+\max\{\bigl(b-g(y)\bigr)^{\top}z\colon A^{\top}z\leq c,z\geq 0\}.
+\end{array}
+\]</div>
+<p>Then problem (1) is equivalent to the following problem</p>
+<div class="arithmatex">\[
+\begin{array}{rl}
+\min&amp; f(y)+h(y)\\
+\mathrm{s.t.}&amp; y\in\mathbb{Y}
+\end{array}
+\tag{2}
+\]</div>
+<p>Denote <span class="arithmatex">\(P=\{z\colon A^{\top}z\leq c,z\geq 0\}\)</span>. According to the 
+<a href="../23_12_07_12_27/">decomposition theorem</a>, <span class="arithmatex">\(P=Q+C\)</span> where 
+<span class="arithmatex">\(Q=\mathrm{hull}\{z_{1},z_{2},\ldots,z_{s}\}\)</span> is a polytope and
+<span class="arithmatex">\(C=\mathrm{cone}\{v_{1},v_{2},\ldots,v_{t}\}\)</span> is a finitely generated cone.
+Then problem (2) is equivalent to the following problem</p>
+<div class="arithmatex">\[
+\begin{array}{rl}
+\min&amp; f(y)+h\\
+\mathrm{s.t.}&amp; \bigl(b-g(y)\bigr)^{\top}z_{i}\leq h,\;1\leq i\leq s\\
+&amp; \bigl(b-g(y)\bigr)^{\top}v_{j}\leq 0,\;1\leq j\leq t\\
+&amp; h\in\mathbb{R}\\
+&amp;y\in\mathbb{Y}
+\end{array}
+\tag{3}
+\]</div>
+<p>Usually there are a lot of <span class="arithmatex">\(z_{i}\)</span> and <span class="arithmatex">\(v_{j}\)</span>, so formulation (3) is 
+impractical. Applying the Benders decomposition, we start from the problem</p>
+<div class="arithmatex">\[
+\begin{array}{rl}
+\min&amp; f(y)+h\\
+\mathrm{s.t.}&amp; h\in\mathbb{R}\\
+&amp;y\in\mathbb{Y}
+\end{array}
+\tag{4}
+\]</div>
+<p>Let <span class="arithmatex">\((y^{\star},h^{\star})\)</span> be a solution of problem (4). Then we consider the 
+following problem</p>
+<div class="arithmatex">\[
+\begin{array}{rl}
+\max&amp; \bigl(b-g(y^{\star})\bigr)^{\top}z\\
+\mathrm{s.t.}&amp; A^{\top}z\leq c\\
+&amp;z\geq 0
+\end{array}
+\tag{5}
+\]</div>
+<p>If problem (5) is unbounded, then there is <span class="arithmatex">\(v_{j}\)</span> such
+that <span class="arithmatex">\(\bigl(b-g(y^{\star})\bigr)^{\top}v_{j}&gt; 0\)</span>. We add a new constraint
+<span class="arithmatex">\(\bigl(b-g(y)\bigr)^{\top}v_{j}\leq 0\)</span> to problem (4).  </p>
+<p>If problem (5) has an optimal solution <span class="arithmatex">\(z_{i}\)</span>, then we have two cases:</p>
+<ol>
+<li>
+<p>If <span class="arithmatex">\(h^{\star}=\bigl(b-g(y^{\star})\bigr)^{\top}z_{i}\)</span>, then <span class="arithmatex">\((x^{\star},y^{\star})\)</span> is an 
+optimal solution of problem (1) where 
+<span class="arithmatex">\(x^{\star}=\mathrm{argmin}\{c^{\top}x\colon Ax\geq b-g(y^{\star}), x\geq 0\}\)</span>. </p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(h^{\star}&lt;\bigl(b-g(y^{\star})\bigr)^{\top}z_{i}\)</span>, then we add 
+a new constraint <span class="arithmatex">\(\bigl(b-g(y)\bigr)^{\top}z_{i}\leq h\)</span> to problem (4).</p>
+</li>
+</ol>
+<p>If we have not yet received a solution of problem (1), then we solve the 
+updated problem (4) and repeat the steps described above.</p>
+
+      
+      
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script>
+    var base_url = "..",
+    shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+  </script>
+  <script src="../js/base.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../search/main.js"></script>
+
+  <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+  </body>
+
+</html>

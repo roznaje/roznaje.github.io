@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  <link rel="shortcut icon" href="../images/favicon.svg">
+  <title>
+    
+    23 11 29 19 54
+    
+  </title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
+  <link href="../css/base.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+  <style>
+    body {
+      margin-bottom: 50px;
+    }
+    
+    .container {
+      max-width: 100ex;
+    }
+
+    .block-head {
+      background-color: rgba(0, 180, 255, 0.2);
+      padding-left: 0.5ex;
+      margin-top: 1ex;
+    }
+
+    .block-body {
+      padding: 0.5ex;
+      margin-bottom: 1ex;
+      border: 0.5px solid rgb(216, 216, 216);
+    }
+
+    pre>code {
+      font-size: 100%;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script> 
+</head>
+
+<body>
+  <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="..">Home</a>
+      <div class="nav navbar-nav">
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+          <i class="fa fa-search"></i> Search
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div role="main">
+
+      <p>Let <span class="arithmatex">\(A\in\mathbb{R}^{n\times m}\)</span>, <span class="arithmatex">\(b\in\mathbb{R}^{n}\)</span>, and 
+<span class="arithmatex">\(c\in\mathbb{R}^{m}\)</span>. We consider LP problem (1)</p>
+<div class="arithmatex">\[
+\begin{array}{rl}
+\min&amp; c^{\top}x\\
+\mathrm{s.t.}&amp; Ax\geq b\\
+&amp; x\geq 0
+\end{array}
+\tag{1}
+\]</div>
+<p>and its dual problem (2)</p>
+<div class="arithmatex">\[
+\begin{array}{rl}
+\max&amp; b^{\top}y\\
+\mathrm{s.t.}&amp; A^{\top}y\leq c\\
+&amp; y\geq 0
+\end{array}
+\tag{2}
+\]</div>
+<div class="block-head">Strong Duality Theorem</div>
+<div class="block-body">If problem (1) has an optimal solution $x^{\star}$,
+then problem (2) also has an optimal solution $y^{\star}$ and
+$c^{\top}x^{\star}=b^{\top}y^{\star}$.</div>
+
+<p><span class="arithmatex">\(\rhd\)</span> First we prove that problem (2) has a feasible solution. Assume the 
+opposite; then the system</p>
+<div class="arithmatex">\[
+\begin{pmatrix}
+A^{\top}\\
+-I
+\end{pmatrix}y\leq 
+\begin{pmatrix}
+c\\
+0
+\end{pmatrix}
+\]</div>
+<p>is infeasible. From <a href="../23_11_29_19_34/">Farkas' lemma</a>, it follows that there 
+exists a non-negative vector
+<span class="arithmatex">\(\begin{pmatrix}z_{1}\\ z_{2}\end{pmatrix}\in\mathbb{R}_{\geq 0}^{m+n}\)</span> such 
+that <span class="arithmatex">\(z_{1}^{\top}A^{\top}=z_{2}^{\top} \geq 0\)</span> and <span class="arithmatex">\(z_{1}^{\top}c&lt;0\)</span>. Then 
+<span class="arithmatex">\(x^{\star}+z_{1}\)</span> is a feasible solution of problem (1) and 
+<span class="arithmatex">\(c^{\top}(x^{\star}+z_{1})&lt;c^{\top}x^{\star}\)</span>, which is impossible.</p>
+<p>Let us note that if <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> are feasible solutions of problems (1) and (2), 
+respectively, then <span class="arithmatex">\(c^{\top}x\geq y^{\top}Ax\geq b^{\top}y\)</span>. </p>
+<p>Second we prove that problem (2) has an optimal solution. Assume the converse;
+then the system </p>
+<div class="arithmatex">\[
+\begin{pmatrix}
+-b^{\top}\\
+A^{\top}\\
+-I
+\end{pmatrix}y\leq 
+\begin{pmatrix}
+-c^{\top}x^{\star}\\
+c\\
+0
+\end{pmatrix}
+\]</div>
+<p>is infeasible. Hence, there is a non-negative vector </p>
+<div class="arithmatex">\[
+\begin{pmatrix}z_{1}\\z_{2}\\z_{3}\end{pmatrix}\in\mathbb{R}^{1+m+n},
+\]</div>
+<p>such that 
+<span class="arithmatex">\(z_{2}^{\top}A^{\top}=z_{1}^{\top}b^{\top}+z_{3}^{\top}I\)</span> and 
+<span class="arithmatex">\(-z_{1}^{\top}c^{\top}x^{\star}+z_{2}^{\top}c&lt; 0\)</span>. Denote <span class="arithmatex">\(x'=x^{\star}+z_{2}\)</span> 
+if <span class="arithmatex">\(z_{1}=0\)</span>, and <span class="arithmatex">\(x'=z_{2}/z_{1}\)</span> otherwise. In the both cases, we obtain 
+that <span class="arithmatex">\(x'\)</span> is feasible solution of problem (1) and 
+<span class="arithmatex">\(c^{\top}x'&lt;c^{\top}x^{\star}\)</span>, which is impossible. <span class="arithmatex">\(\lhd\)</span></p>
+
+      
+      <h4>Backlinks:</h4>
+      <ul>
+        
+        <li><a href="/23_12_08_14_54/">23 12 08 14 54</a></li>
+        
+      </ul>
+      
+      
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script>
+    var base_url = "..",
+    shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+  </script>
+  <script src="../js/base.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="../search/main.js"></script>
+
+  <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+  </body>
+
+</html>
